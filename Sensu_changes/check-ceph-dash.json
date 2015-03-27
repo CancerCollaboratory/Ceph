@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "ceph": {
+      "type": "metric",
+      "command": "check-ceph-dash-graphite.py --url 'http://ceph_dash:5000/'| xargs -n3",
+      "interval": 30,
+      "subscribers": ["ceph"],
+      "handlers": ["relay"]
+    }
+  }
+}
+

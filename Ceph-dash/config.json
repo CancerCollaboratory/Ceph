@@ -1,0 +1,25 @@
+{
+    "ceph_config": "/etc/ceph/ceph.conf",
+    "graphite": {
+        "url": "http://monitor.oicrsofteng.org",
+        "metrics": [
+            {
+                "targets": [ 
+                    "avg(ceph.read_bytes_sec)",
+                    "avg(ceph.write_bytes_sec)"
+                ],
+                "labels": [ "Read", "Write" ],
+                "from": "-2h",
+                "mode": "byteRate"
+            },
+            {
+                "targets": [ 
+                    "avg(ceph.op_per_sec)"
+                ],
+                "labels": [ "IOPS" ],
+                "colors": [ "#5bc0de" ],
+                "from": "-2h"
+            }
+        ]
+    }
+}
